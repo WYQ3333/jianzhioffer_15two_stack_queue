@@ -11,6 +11,8 @@ public:
 	}
 
 	int pop() {
+		
+
 		while (!stack1.empty()){
 			auto temp = stack1.top();
 			stack1.pop();
@@ -26,27 +28,50 @@ private:
 	stack<int> stack2;
 };
 
+class Solution2
+{
+public:
+	void push(int node) {
+		stack1.push(node);
+	}
+
+	int pop() {
+
+		
+		while (!stack1.empty()){
+			auto temp = stack1.top();
+			stack1.pop();
+			stack2.push(temp);
+		}
+		auto cur = stack2.top();
+		stack2.pop();
+		return cur;
+	}
+
+private:
+	stack<int> stack1;
+	stack<int> stack2;
+};
+
+
 void TestFunc(){
 
 	Solution q;
 	q.push(1);
 	q.push(2);
 	q.push(3);
+	int a = q.pop();
+	cout << a << " " << endl;
+	a = q.pop();
+	cout << a << " " << endl;
 	q.push(4);
 	q.push(5);
-	q.push(6);
-	int a = q.pop();
-	cout << a << "" << endl;
 	a = q.pop();
-	cout << a << "" << endl;
+	cout << a << " " << endl;
 	a = q.pop();
-	cout << a << "" << endl;
+	cout << a << " " << endl;
 	a = q.pop();
-	cout << a << "" << endl;
-	a = q.pop();
-	cout << a << "" << endl;
-	a = q.pop();
-	cout << a << "" << endl;
+	cout << a << " " << endl;
 }
 
 //void TestFunc(){
