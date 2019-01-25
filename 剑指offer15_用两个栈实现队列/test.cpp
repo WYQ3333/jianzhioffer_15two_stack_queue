@@ -36,7 +36,11 @@ public:
 	}
 
 	int pop() {
-
+		if (!stack2.empty()){
+			auto cur = stack2.top();
+			stack2.pop();
+			return cur;
+		}
 		
 		while (!stack1.empty()){
 			auto temp = stack1.top();
@@ -56,7 +60,7 @@ private:
 
 void TestFunc(){
 
-	Solution q;
+	Solution2 q;
 	q.push(1);
 	q.push(2);
 	q.push(3);
