@@ -11,8 +11,9 @@ public:
 	}
 
 	int pop() {
-		while (stack1.empty()){
+		while (!stack1.empty()){
 			auto temp = stack1.top();
+			stack1.pop();
 			stack2.push(temp);
 		}
 		auto cur = stack2.top();
@@ -44,7 +45,8 @@ void TestFunc(){
 	cout << a << "" << endl;
 	a = q.pop();
 	cout << a << "" << endl;
-	
+	a = q.pop();
+	cout << a << "" << endl;
 }
 
 //void TestFunc(){
